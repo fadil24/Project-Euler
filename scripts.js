@@ -1,6 +1,5 @@
 // Problem 1
 // Find the sum of all the multiples of 3 or 5 below the provided parameter value number.
-
 function multiplesOf3and5(number) {
   let sum = 0, i = 3;
   while( i < number){
@@ -12,7 +11,6 @@ function multiplesOf3and5(number) {
 
 // Problem 2
 // Considering the terms in the Fibonacci sequence whose values do not exceed n, find the sum of the even-valued terms.
-
 function fiboEvenSum(n) {
   let sum=0, num1=0, num2=1, num3=0;
   while(num3 < n){
@@ -23,5 +21,5 @@ function fiboEvenSum(n) {
       sum+=num3;
     }
   }
-  console.log(sum);
+  return sum;
 }
