@@ -14,13 +14,14 @@ function multiplesOf3and5(number) {
 // Considering the terms in the Fibonacci sequence whose values do not exceed n, find the sum of the even-valued terms.
 
 function fiboEvenSum(n) {
-  let sum = 0, i = 1, fiboNum = [0, 1];
-  do{
-    i++;
-    fiboNum[i] = fiboNum[i-1] + fiboNum[i-2];
-    if(fiboNum[i]%2 == 0){
-      sum += fiboNum[i];
+  let sum=0, num1=0, num2=1, num3=0;
+  while(num3 < n){
+    num3 = num2 + num1;
+    num1 = num2;
+    num2 = num3;
+    if(num3%2 == 0){
+      sum+=num3;
     }
-  }while(fiboNum[i] < n);
-  return sum;
+  }
+  console.log(sum);
 }
