@@ -27,7 +27,7 @@ function fiboEvenSum(n) {
 /* 
 * Problem 3
 * Find largest prime factor
-* @param {number} number - number to be checked
+* @param {number} number - number that needed to be find its lergest prime factor
 * return {number} - largest prime factor
 */ 
 function largestPrimeFactor(number) {
