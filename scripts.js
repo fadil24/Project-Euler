@@ -23,3 +23,26 @@ function fiboEvenSum(n) {
   }
   return sum;
 }
+
+/* 
+* Problem 3
+* Find largest prime factor
+* @param {number} number - number to be checked
+* return {number} - largest prime factor
+*/ 
+function largestPrimeFactor(number) {
+  let prime = 2, largestPrime = 0;
+  while(prime <= number){
+    if(number % prime == 0){
+      number /= prime;
+      largestPrime = prime;
+
+      /* if current prime cant divide the number, 
+      *  then next number which is not prime won't, 
+      *  until next another prime to be checked.
+      *  this is will be repeated until the number equal to one
+      */ 
+    }else{ prime++; }
+  }
+  return largestPrime;
+}
