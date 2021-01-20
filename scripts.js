@@ -46,3 +46,31 @@ function largestPrimeFactor(number) {
   }
   return largestPrime;
 }
+/* Problem 4
+ * find the largest palindrome product i.e. n = 3, return = 906609, product from 993*913 
+ * @param {number} n - a number of digits
+ * return {number} - largest palindrome 
+ */
+function largestPalindromeProduct(n) {
+  let factor = parseInt('9'.repeat(n));
+  let max = Math.pow(factor, 2);
+  /* create palindrome base on maximum 3 numbers squared
+   * change (patt)ern by (red)uce it with number but only one side
+   */
+  let patt = max.toString().slice(0,n);
+  const createPalindrome = function(patt, red = 0){
+    patt = parseInt(patt) - red;
+    patt = patt.toString()
+    patt = patt + patt.split('').reverse().join('');
+    return parseInt(patt);
+  }
+  for(let r=0; r<100; r++){
+    let pal = createPalindrome(patt, r)
+    console.log(pal)
+    for(let m=factor; m>Math.sqrt(pal); m--){
+      if(pal%m == 0){
+        return pal;
+      }
+    }
+  }
+}
